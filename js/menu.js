@@ -92,25 +92,33 @@ export function renderContact() {
   if (!wrap) return;
   const s = SETTINGS;
   wrap.innerHTML = `
-    <div class="contact-card">
-      <div class="contact-info"><h3>Adresse</h3><p>${s.address || '12 Avenue des Saveurs<br/>Tanger, Maroc'}</p></div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-info"><h3>Adresse</h3><p>${s.address || '12 Avenue des Saveurs<br/>Tanger, Maroc'}</p></div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-info"><h3>Horaires</h3><p>${s.hours || 'Lun–Sam : 12h–15h · 19h–23h<br/>Dim : 12h–16h'}</p></div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-info"><h3>Téléphone</h3><a href="tel:${s.phone_raw || '+212630230803'}">${s.phone || '+212 630 230 803'}</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-info"><h3>Email</h3><a href="mailto:${s.email || 'contact@fadaerif.ma'}">${s.email || 'contact@fadaerif.ma'}</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-info"><h3>Instagram</h3><a href="#">${s.instagram || '@fadaerif.marrakech'}</a></div>
+      </div>
     </div>
-    <div class="contact-card">
-      <div class="contact-info"><h3>Horaires</h3><p>${s.hours || 'Lun–Sam : 12h–15h · 19h–23h<br/>Dim : 12h–16h'}</p></div>
-    </div>
-    <div class="contact-card">
-      <div class="contact-info"><h3>Téléphone</h3><a href="tel:${s.phone_raw || '+212630230803'}">${s.phone || '+212 630 230 803'}</a></div>
-    </div>
-    <div class="contact-card">
-      <div class="contact-info"><h3>Email</h3><a href="mailto:${s.email || 'contact@fadaerif.ma'}">${s.email || 'contact@fadaerif.ma'}</a></div>
-    </div>
-    <div class="contact-card">
-      <div class="contact-info"><h3>Instagram</h3><a href="#">${s.instagram || '@fadaerif.marrakech'}</a></div>
-    </div>
-    <a class="wa-cta" href="https://wa.me/${s.wa_number || '212630230803'}?text=${encodeURIComponent('Bonjour, je voudrais avoir des informations sur ' + (s.restaurant_name || 'FADAE RIF') + '.')}" target="_blank">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.541 5.87L0 24l6.268-1.508A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.939 0-3.765-.494-5.353-1.359l-.373-.21-3.863.929.972-3.756-.235-.391A9.963 9.963 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-      Contacter via WhatsApp
-    </a>`;
+    <div class="google-review-block">
+      <div class="google-review-stars">★★★★★</div>
+      <div class="google-review-score">4.9/5 sur Google</div>
+      <div class="google-review-count">250+ avis vérifiés</div>
+      <p class="google-review-msg">« Découvrez pourquoi nos clients nous recommandent »</p>
+      <a class="google-review-btn" href="https://maps.app.goo.gl/YVrDEyhoaB1JkEJXA" target="_blank">
+        <svg class="google-icon" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+        Laisser un avis Google
+      </a>
+    </div>`;
 }
 
 /* --- État --- */
