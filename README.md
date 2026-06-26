@@ -3,7 +3,6 @@
 ## Architecture
 
 ```
-luxora/
 ├── index.html            # Structure HTML (sémantique, pas de style ni JS inline)
 ├── css/
 │   ├── main.css          # Point d'entrée CSS — importe tous les fichiers
@@ -16,10 +15,10 @@ luxora/
 │   ├── main.js           # Point d'entrée JS — initialise les modules
 │   ├── navigation.js     # Routage, navigation, thème, panier (ouverture/fermeture)
 │   └── menu.js           # Données, état, panier, favoris, recherche, filtres, WhatsApp
-├── assets/
-│   ├── images/           # Images (non utilisées actuellement)
-│   └── fonts/            # Polices locales (optionnel)
-└── README.md
+├── api/
+│   └── ping.js           # KeepAlive Supabase
+├── images/               # Images (logo, etc.)
+└── *.md                  # Documentation
 ```
 
 ## Conventions
@@ -48,21 +47,17 @@ Ouvrir `index.html` directement (via `file://`) **ne fonctionnera pas**.
 
 ### Option 1 : Node.js (préféré)
 ```bash
-npx serve luxora/
-# ou
-npx live-server luxora/
+npx serve --listen 3000
 ```
 
 ### Option 2 : Python
 ```bash
-cd luxora
 python -m http.server 8000
 # → http://localhost:8000
 ```
 
 ### Option 3 : PHP
 ```bash
-cd luxora
 php -S localhost:8000
 ```
 

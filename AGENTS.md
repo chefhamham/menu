@@ -9,7 +9,7 @@
 
 ## Dev server (required for ES6 modules)
 ```bash
-npx serve luxora --listen 3000
+npx serve --listen 3000
 ```
 Opening `index.html` via `file://` will not work.
 
@@ -62,7 +62,7 @@ Opening `index.html` via `file://` will not work.
 
 
 ## Commands
-- Run: `npx serve luxora --listen 3000`
+- Run: `npx serve --listen 3000`
 - Apply SQL: `POST /v1/projects/{ref}/database/query` with PAT + JSON body `{"query": "..."}`
 
 ## Migration v1 (TEXT → JSONB + category_id)

@@ -50,7 +50,7 @@ Le projet utilise **Supabase Auth** avec la méthode **Email + Password**.
 
 | Champ | Valeur |
 |---|---|
-| Email | `admin@fadaerif.ma` |
+| Email | `admin@hamham.com` |
 | Mot de passe | `<your-admin-password>` |
 
 ### Création de l'admin user
@@ -65,7 +65,7 @@ Le projet utilise **Supabase Auth** avec la méthode **Email + Password**.
 curl -X POST https://api.supabase.com/v1/projects/<project-ref>/database/query \
   -H "Authorization: Bearer sbp_<pat>" \
   -H "Content-Type: application/json" \
-  -d '{"query": "SELECT supabase_auth.admin_create_user('\''admin@fadaerif.ma'\'', '\''<your-admin-password>'\'');"}'
+  -d '{"query": "SELECT supabase_auth.admin_create_user('\''admin@hamham.com'\'', '\''<your-admin-password>'\'');"}'
 ```
 
 ### Connexion côté client
@@ -152,8 +152,8 @@ CREATE TABLE settings (
 | `hours` | Horaires d'ouverture | Page contact |
 | `phone` | `+212 524 43 21 00` | Page contact (formaté) |
 | `phone_raw` | `+212524432100` | Lien tel: dans le contact |
-| `email` | `contact@fadaerif.ma` | Page contact |
-| `instagram` | `@fadaerif.marrakech` | Page contact |
+| `email` | `contact@hamham.com` | Page contact |
+| `instagram` | `@chefhamham` | Page contact |
 | `wa_number` | `212661234567` | Numéro WhatsApp (sans +) |
 
 ---
@@ -355,7 +355,7 @@ flowchart TD
 
 6. **Créer l'admin user**
    - `Authentication → Users → Add User`
-   - Email : `admin@fadaerif.ma` / Password : `<your-admin-password>`
+   - Email : `admin@hamham.com` / Password : `<your-admin-password>`
 
 7. **Vérifier** que les tables et le bucket existent
    - `Table Editor` : voir `categories`, `menu_items`, `settings`
@@ -364,10 +364,10 @@ flowchart TD
 
 8. **Tester** l'application
    ```bash
-   npx serve luxora --listen 3000
+   npx serve --listen 3000
    ```
    - Naviguer dans le menu (vérifier les données seed)
-   - Se connecter avec `admin@fadaerif.ma` / `<your-admin-password>`
+   - Se connecter avec `admin@hamham.com` / `<your-admin-password>`
    - Vérifier le CRUD des plats/catégories
    - Uploader une image de plat
    - Modifier la configuration
@@ -398,5 +398,5 @@ Ces valeurs sont celles de l'instance Supabase configurée. À remplacer par les
 | PAT | `<your-personal-access-token>` |
 | Anon key | `<your-anon-key>` |
 | Service key | `<your-service-role-key>` |
-| Admin email | `admin@fadaerif.ma` |
+| Admin email | `admin@hamham.com` |
 | Admin password | `<your-admin-password>` |
